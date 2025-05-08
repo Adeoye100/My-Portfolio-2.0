@@ -1,0 +1,477 @@
+:root {
+  --text-color: #1a1c20;
+  --link-color: #4a76ee;
+  --background-color: #f5f5f5;
+}
+
+/* Default Light Mode */
+:root {
+  --text-color: #1a1c20;
+  --background-color: #f5f5f5;
+}
+
+/* Hide checkbox */
+.theme-toggle-checkbox {
+  display: none;
+}
+
+/* Style the toggle button */
+.theme-toggle-label {
+  cursor: pointer;
+  font-size: 24px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.theme-toggle-label i {
+  transition: opacity 0.3s ease;
+}
+
+/* Default: show sun icon, hide moon icon */
+.sun-icon {
+  display: inline;
+}
+
+.moon-icon {
+  display: none;
+}
+
+/* When dark mode is active, swap icons */
+.theme-toggle-checkbox:checked + .theme-toggle-label .sun-icon {
+  display: none;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label .moon-icon {
+  display: inline;
+}
+
+/* Change icon visibility */
+.theme-toggle-checkbox:checked + .theme-toggle-label .fa-sun {
+  opacity: 0;
+}
+
+.theme-toggle-checkbox:not(:checked) + .theme-toggle-label .fa-moon {
+  opacity: 0;
+}
+
+/* Apply dark mode when checkbox is checked */
+.theme-toggle-checkbox:checked ~ .theme-container {
+  --text-color: #f5f5f5;
+  --background-color: #1a1c20;
+}
+
+/* Hide sun icon in dark mode */
+.theme-toggle-checkbox:checked ~ .theme-toggle-label .sun-icon {
+  display: none;
+}
+
+/* Show moon icon in dark mode */
+.theme-toggle-checkbox:checked ~ .theme-toggle-label .moon-icon {
+  display: inline;
+}
+
+/* Show sun icon and hide moon icon in light mode */
+.theme-toggle-checkbox:not(:checked) ~ .theme-toggle-label .sun-icon {
+  display: inline;
+}
+
+.theme-toggle-checkbox:not(:checked) ~ .theme-toggle-label .moon-icon {
+  display: none;
+}
+
+/* Apply colors to body */
+.theme-container {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/*NAVBAR*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+  height: 80px;
+}
+
+nav .left a {
+  color: var(--text-color);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+nav .right a {
+  color: var(--text-color);
+  margin: 0 10px;
+}
+
+nav .right a:last-child {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+nav .right a span {
+  margin-left: 5px;
+}
+
+nav .left:hover a {
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px #fff;
+}
+
+/*SECTION 1: hero*/
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  margin: 50px 0;
+  margin-bottom: 100px;
+  gap: 40px;
+}
+
+.hero-section .text {
+  flex: 5;
+}
+
+.hero-section .text h2 {
+  font-size: 45px;
+  background: linear-gradient(to right, blue, red);
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-section .text h2 .emoji {
+  color: yellow;
+}
+.hero-section .text .links {
+  margin-top: 25px;
+}
+
+.hero-section .text .links a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid var(--link-color);
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  transition: 0.1s;
+}
+
+.hero-section .text .links a:last-child {
+  margin-right: 0;
+}
+
+.hero-section .text .links a:hover {
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+}
+
+.hero-section .headshot {
+  flex: 2;
+  display: flex;
+  justify-content: right;
+}
+
+.hero-section .headshot img {
+  width: 350px;
+  border-radius: 50%;
+}
+
+.hero-section .headshot img:hover {
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
+    -10px -10px 10px #fff inset;
+}
+
+/*SECTION 2: Skills*/
+.skills-section {
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+.skills-section h2 {
+  text-align: center;
+  font-size: 35px;
+}
+
+.skills-section .text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skills-section .cells {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.skills-section .cells .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 200px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 1.5px solid #d3d3d3;
+  border-radius: 5px;
+}
+
+.skills-section .cells .cell img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.skills-section .cells .cell span {
+  font-size: 18px;
+}
+
+/* SECTION 3: Testimony */
+.testimony-section {
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+
+.testimony-section h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.testimony-section .group {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.testimony-section .group .person-details {
+  text-align: center;
+  flex: 2;
+  padding: 20px;
+}
+
+.testimony-section .person-details img {
+  width: 200px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.testimony-section .person-details p {
+  font-weight: 600;
+}
+
+.testimony-section .group .person-details p:last-child {
+  font-weight: normal;
+}
+
+.testimony-section .group .text {
+  flex: 8;
+  margin-top: 0;
+  align-items: center;
+  justify-items: center;
+}
+
+/*SECTION 4: contact*/
+.contact-section {
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+
+.contact-section h2 {
+  font-size: 35px;
+}
+
+.contact-section .group {
+  display: flex;
+  gap: 50px;
+}
+
+.contact-section .group .text {
+  flex: 3;
+  margin-top: 20px;
+  color: var(--text-color);
+}
+
+.contact-section .group form {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section .group form input,
+.contact-section .group form textarea {
+  font-family: "poppins", sans-serif;
+  border: 2px solid var(--link-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 10px;
+  margin-bottom: 15px;
+  outline: none;
+  resize: none;
+  border-radius: 12px;
+}
+
+/* Ensure text is always visible */
+.theme-toggle-checkbox:checked
+  ~ .theme-container
+  .contact-section
+  .group
+  form
+  input,
+.theme-toggle-checkbox:checked
+  ~ .theme-container
+  .contact-section
+  .group
+  form
+  textarea {
+  background-color: #333; /* Dark background for inputs in dark mode */
+  color: #fff; /* Light text for readability */
+  border: 2px solid #4a76ee; /* Maintain visible border */
+}
+
+.contact-section .group form button {
+  font-size: 16px;
+  font-family: "poppins", sans-serif;
+  color: #fff;
+  background-color: var(--link-color);
+  border: none;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.1s;
+  border-radius: 12px;
+}
+
+.contact-section .group form button:hover {
+  filter: brightness(0.9);
+}
+
+.contact-section .group form button:active {
+  filter: brightness(0.8);
+}
+
+.footer {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 80px;
+  background: linear-gradient(to left, blue, red);
+  color: var(--text-color);
+}
+
+.contact-section .group .socials a:hover {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border: 2px solid var(--text-color);
+}
+
+@media (max-width: 850px) {
+  /*SECTION 1: Hero*/
+  .hero-section .text h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 740px) {
+  /*SECTION 1: Hero*/
+  .hero-section {
+    flex-direction: column-reverse;
+  }
+
+  .hero-section .headshot img {
+    width: 300px;
+  }
+
+  /* SECTION 3: Testimony */
+  .testimony-section {
+    text-align: center;
+  }
+
+  .testimony-section .group {
+    flex-direction: column;
+  }
+
+  /*SECTION 4: contact*/
+  .contact-section .group {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  /*NAVBAR*/
+  nav {
+    padding: 0 20px;
+  }
+
+  nav .right a {
+    font-size: 22px;
+  }
+
+  nav .right a:last-child {
+    color: var(--text-color);
+    background-color: transparent;
+    padding: 0;
+  }
+
+  nav .right a span {
+    display: none;
+  }
+
+  /*SECTION 1: Hero*/
+  .hero-section {
+    padding: 0 20px;
+  }
+
+  .hero-section .text h2 {
+    font-size: 30px;
+  }
+
+  /*SECTION 2: Skills*/
+  .skills-section {
+    padding: 0 20px;
+  }
+  .skills-section .cells .cell span {
+    font-size: 16px;
+  }
+  /* SECTION 3: Testimony */
+  .testimony-section {
+    padding: 0 20px;
+  }
+
+  /*SECTION 4: contact*/
+  .contact-section {
+    padding: 0 20px;
+  }
+}
